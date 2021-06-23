@@ -115,7 +115,7 @@ server <- function(input, output, session) {
  ## Leaflet map
  ## Parts of the leaflet map that are static
  output$map <- renderLeaflet({
-   req(input$sdg)
+   req(input$sdg,input$topic, input$indicator, input$year)
    leaflet(data = merged_mapping_df) %>% 
      addTiles() %>% 
      setView(lng = 20.48554, lat = 6.57549,  zoom = 3)
